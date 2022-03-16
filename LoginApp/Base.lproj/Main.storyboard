@@ -25,7 +25,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gKL-aO-Y4Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-dM-Fef">
                                                 <rect key="frame" x="0.0" y="67" width="328" height="34"/>
@@ -33,7 +33,7 @@
                                                     <constraint firstAttribute="height" constant="34" id="qZF-RH-k9S"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -44,6 +44,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="299-jV-Wj5"/>
                                             <segue destination="1xZ-oE-tAO" kind="presentation" id="f3Z-kw-F1M"/>
                                         </connections>
                                     </button>
@@ -56,6 +57,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="forgotNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ijn-zc-WJH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXY-V3-9ob">
                                                 <rect key="frame" x="178.5" y="0.0" width="149.5" height="31"/>
@@ -66,6 +70,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="forgotPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lgn-dm-cnI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -85,6 +92,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XOo-zK-vFu"/>
+                    <connections>
+                        <outlet property="loginTextField" destination="gKL-aO-Y4Y" id="wVf-mK-O6A"/>
+                        <outlet property="passwordTextField" destination="gGN-dM-Fef" id="M7h-0A-OXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,6 +121,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="21"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="TR9-N2-vvU" kind="unwind" unwindAction="unwindFor:" id="4la-mV-b88"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yOW-c3-8je"/>
@@ -125,8 +139,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q0f-If-0f7"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="Bix-8u-sFV" id="Vo0-mm-D1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqS-T0-gUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="TR9-N2-vvU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="79.6875"/>
         </scene>
