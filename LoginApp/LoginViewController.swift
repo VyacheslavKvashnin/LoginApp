@@ -25,6 +25,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.loginLabel = loginTextField.text
@@ -62,10 +67,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func forgotPassword() {
         showAlert(with: "Oops!", and: "Your password is \(password)")
-    }
-    
-    @IBAction func tapGesture(_ sender: Any) {
-        view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

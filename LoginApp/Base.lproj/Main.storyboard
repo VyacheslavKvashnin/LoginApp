@@ -25,7 +25,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gKL-aO-Y4Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-dM-Fef">
                                                 <rect key="frame" x="0.0" y="67" width="328" height="34"/>
@@ -91,9 +91,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="teh-Bx-zq7" secondAttribute="trailing" constant="43" id="Wvw-i7-00s"/>
                             <constraint firstItem="teh-Bx-zq7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="dOQ-5H-vve"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="ZSp-W1-PRb" appends="YES" id="HfS-T5-AnK"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="XOo-zK-vFu"/>
                     <connections>
@@ -102,11 +99,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ZSp-W1-PRb">
-                    <connections>
-                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="B3d-1y-4Bt"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
         </scene>
