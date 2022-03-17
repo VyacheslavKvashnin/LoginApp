@@ -45,7 +45,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="299-jV-Wj5"/>
-                                            <segue destination="1xZ-oE-tAO" kind="presentation" id="f3Z-kw-F1M"/>
+                                            <segue destination="1xZ-oE-tAO" kind="presentation" identifier="performSegue" id="f3Z-kw-F1M"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-iM-nC8">

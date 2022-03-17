@@ -75,6 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else {
             loginButton()
+            performSegue(withIdentifier: "performSegue", sender: nil)
         }
         return true
     }
