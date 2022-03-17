@@ -12,8 +12,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    
     let user = "User"
     let password = "Password"
     
@@ -22,7 +20,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
-
+        
+        registerNotificationCenter()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,8 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         guard let passwordTextField = passwordTextField.text,
-                !passwordTextField.isEmpty,
-                passwordTextField == password
+              !passwordTextField.isEmpty,
+              passwordTextField == password
         else {
             showAlert(with: "Invalid login or password", and: "Enter the correct username and password")
             return
@@ -69,24 +69,36 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            passwordTextField.becomeFirstResponder()
+        passwordTextField.becomeFirstResponder()
     }
     
     func registerNotificationCenter() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification, object: nil
+        )
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification, object: nil
+        )
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        let userInfo = notification.userInfo
-        let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        view.frame.origin.y = kbFrameSize?.height ?? 0
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height / 3
+            }
+        }
     }
     
     @objc func keyboardWillHide() {
-        
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     private func showAlert(with title: String, and message: String) {
