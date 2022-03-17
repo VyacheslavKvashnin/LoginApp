@@ -34,9 +34,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         guard unwindSegue.source is WelcomeViewController else { return }
         loginTextField.text = ""
         passwordTextField.text = ""
+        
     }
     
     @IBAction func loginButton() {
+        
         guard let loginTextField = loginTextField.text,
               !loginTextField.isEmpty,
               loginTextField == user
@@ -51,7 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             showAlert(with: "Invalid login or password", and: "Enter the correct username and password")
             return
         }
-        
+        view.endEditing(true)
     }
     
     @IBAction func forgotNameButton() {
@@ -63,13 +65,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tapGesture(_ sender: Any) {
-        loginTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+        view.endEditing(true)
     }
     
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        passwordTextField.becomeFirstResponder()
+        
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            loginButton()
+        }
+        return true
     }
     
     func registerNotificationCenter() {
