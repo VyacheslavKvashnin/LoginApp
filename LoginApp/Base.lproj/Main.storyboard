@@ -33,7 +33,7 @@
                                                     <constraint firstAttribute="height" constant="34" id="qZF-RH-k9S"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -84,12 +84,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="teh-Bx-zq7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="39w-HV-LVr"/>
                             <constraint firstItem="teh-Bx-zq7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPx-Kb-Ra6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="teh-Bx-zq7" secondAttribute="trailing" constant="43" id="Wvw-i7-00s"/>
                             <constraint firstItem="teh-Bx-zq7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="dOQ-5H-vve"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZSp-W1-PRb" appends="YES" id="HfS-T5-AnK"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="XOo-zK-vFu"/>
                     <connections>
@@ -98,6 +102,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZSp-W1-PRb">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="B3d-1y-4Bt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
         </scene>

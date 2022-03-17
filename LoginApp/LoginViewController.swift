@@ -7,13 +7,23 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
+    
     let user = "User"
     let password = "Password"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
@@ -24,7 +34,6 @@ class LoginViewController: UIViewController {
         guard unwindSegue.source is WelcomeViewController else { return }
         loginTextField.text = ""
         passwordTextField.text = ""
-        
     }
     
     @IBAction func loginButton() {
@@ -51,6 +60,33 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotPassword() {
         showAlert(with: "Oops!", and: "Your password is \(password)")
+    }
+    
+    @IBAction func tapGesture(_ sender: Any) {
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            passwordTextField.becomeFirstResponder()
+    }
+    
+    func registerNotificationCenter() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        let userInfo = notification.userInfo
+        let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        view.frame.origin.y = kbFrameSize?.height ?? 0
+    }
+    
+    @objc func keyboardWillHide() {
+        
     }
     
     private func showAlert(with title: String, and message: String) {
