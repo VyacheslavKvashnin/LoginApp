@@ -14,8 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     
     // MARK: - Private Properties
-    private let user = "User"
-    private let password = "Password"
+    private let users = User.getUsers()
     
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -34,8 +33,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.loginLabel = loginTextField.text
+        
+        let tabBarController = segue.destination as? UITabBarController
+        
+        guard let viewControllers = tabBarController?.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            
+            if let welcomeVC = viewController as? WelcomeViewController {
+                
+                welcomeVC.name = users.person.name
+                welcomeVC.lastname = users.person.lastname
+                
+            } else if let navigationVC = viewController as? UINavigationController {
+                
+                let infoVC = navigationVC.topViewController as! InfoViewController
+                infoVC.title = "\(users.person.name) \(users.person.lastname)"
+                infoVC.hobby = users.person.hobby
+            }
+        }
+        
     }
     
     // MARK: - IBActions
@@ -46,12 +63,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButton() {
         
-        guard loginTextField.text == user
+        guard loginTextField.text == users.login
         else {
             showAlert(with: "Invalid login or password", and: "Enter the correct username and password")
             return
         }
-        guard passwordTextField.text == password
+        guard passwordTextField.text == users.password
         else {
             showAlert(with: "Invalid login or password", and: "Enter the correct username and password")
             return
@@ -60,11 +77,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func forgotNameButton() {
-        showAlert(with: "Oops!", and: "Your name is \(user)")
+        showAlert(with: "Oops!", and: "Your name is \(users.login)")
     }
     
     @IBAction func forgotPassword() {
-        showAlert(with: "Oops!", and: "Your password is \(password)")
+        showAlert(with: "Oops!", and: "Your password is \(users.password)")
     }
     
     // MARK: - Public Methods
