@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3D7B1627E4D970000D5667 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7B1527E4D970000D5667 /* User.swift */; };
+		BD3D7B1827E4EC0F000D5667 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7B1727E4EC0F000D5667 /* InfoViewController.swift */; };
+		BD3D7B1A27E5162E000D5667 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7B1927E5162E000D5667 /* DetailedViewController.swift */; };
 		BDD5920F27E2062F0082DD1F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD5920E27E2062F0082DD1F /* WelcomeViewController.swift */; };
 		BDF4084727E10F22008AEB2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4084627E10F22008AEB2C /* AppDelegate.swift */; };
 		BDF4084927E10F22008AEB2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4084827E10F22008AEB2C /* SceneDelegate.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD3D7B1527E4D970000D5667 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BD3D7B1727E4EC0F000D5667 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		BD3D7B1927E5162E000D5667 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		BDD5920E27E2062F0082DD1F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BDF4084327E10F22008AEB2C /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF4084627E10F22008AEB2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD3D7B1027E4D333000D5667 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDF4084A27E10F22008AEB2C /* LoginViewController.swift */,
+				BDD5920E27E2062F0082DD1F /* WelcomeViewController.swift */,
+				BD3D7B1727E4EC0F000D5667 /* InfoViewController.swift */,
+				BD3D7B1927E5162E000D5667 /* DetailedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BD3D7B1127E4D369000D5667 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BDF4084C27E10F22008AEB2C /* Main.storyboard */,
+				BDF4085127E10F24008AEB2C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BD3D7B1227E4D3B2000D5667 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BDF4084627E10F22008AEB2C /* AppDelegate.swift */,
+				BDF4084827E10F22008AEB2C /* SceneDelegate.swift */,
+				BDF4085427E10F24008AEB2C /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BD3D7B1327E4D43A000D5667 /* Resurs */ = {
+			isa = PBXGroup;
+			children = (
+				BDF4084F27E10F24008AEB2C /* Assets.xcassets */,
+			);
+			path = Resurs;
+			sourceTree = "<group>";
+		};
+		BD3D7B1427E4D853000D5667 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD3D7B1527E4D970000D5667 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BDF4083A27E10F22008AEB2C = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +110,11 @@
 		BDF4084527E10F22008AEB2C /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				BDF4084627E10F22008AEB2C /* AppDelegate.swift */,
-				BDF4084827E10F22008AEB2C /* SceneDelegate.swift */,
-				BDF4084A27E10F22008AEB2C /* LoginViewController.swift */,
-				BDD5920E27E2062F0082DD1F /* WelcomeViewController.swift */,
-				BDF4084C27E10F22008AEB2C /* Main.storyboard */,
-				BDF4084F27E10F24008AEB2C /* Assets.xcassets */,
-				BDF4085127E10F24008AEB2C /* LaunchScreen.storyboard */,
-				BDF4085427E10F24008AEB2C /* Info.plist */,
+				BD3D7B1027E4D333000D5667 /* ViewControllers */,
+				BD3D7B1427E4D853000D5667 /* Models */,
+				BD3D7B1127E4D369000D5667 /* Storyboards */,
+				BD3D7B1227E4D3B2000D5667 /* App */,
+				BD3D7B1327E4D43A000D5667 /* Resurs */,
 			);
 			path = LoginApp;
 			sourceTree = "<group>";
@@ -141,9 +190,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3D7B1A27E5162E000D5667 /* DetailedViewController.swift in Sources */,
 				BDF4084B27E10F22008AEB2C /* LoginViewController.swift in Sources */,
 				BDD5920F27E2062F0082DD1F /* WelcomeViewController.swift in Sources */,
 				BDF4084727E10F22008AEB2C /* AppDelegate.swift in Sources */,
+				BD3D7B1627E4D970000D5667 /* User.swift in Sources */,
+				BD3D7B1827E4EC0F000D5667 /* InfoViewController.swift in Sources */,
 				BDF4084927E10F22008AEB2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +347,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P745L5C6BY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,7 +376,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P745L5C6BY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
