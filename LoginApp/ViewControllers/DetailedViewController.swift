@@ -11,11 +11,11 @@ class DetailedViewController: UIViewController {
     
     @IBOutlet weak var detailLabel: UILabel!
     
-    var detail: String!
+    var users: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailLabel.text = detail
+        detailLabel.text = users.person.detail
     }
 }

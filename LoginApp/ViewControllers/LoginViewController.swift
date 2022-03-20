@@ -42,15 +42,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             if let welcomeVC = viewController as? WelcomeViewController {
                 
-                welcomeVC.name = users.person.name
-                welcomeVC.lastname = users.person.lastname
+                welcomeVC.users = users
                 
             } else if let navigationVC = viewController as? UINavigationController {
                 
                 let infoVC = navigationVC.topViewController as! InfoViewController
                 
-                infoVC.title = "\(users.person.name) \(users.person.lastname)"
-                infoVC.hobby = users.person.hobby
+                infoVC.users = users
                 
             }
         }
