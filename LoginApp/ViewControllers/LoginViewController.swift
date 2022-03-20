@@ -48,11 +48,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else if let navigationVC = viewController as? UINavigationController {
                 
                 let infoVC = navigationVC.topViewController as! InfoViewController
+                
                 infoVC.title = "\(users.person.name) \(users.person.lastname)"
                 infoVC.hobby = users.person.hobby
+                
             }
         }
-        
     }
     
     // MARK: - IBActions

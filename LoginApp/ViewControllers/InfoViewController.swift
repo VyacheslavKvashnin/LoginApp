@@ -13,10 +13,18 @@ class InfoViewController: UIViewController {
     
     var hobby: String!
     
+    let users = User.getUsers()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         hobbyLabel.text = hobby
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? DetailedViewController {
+            detailVC.detail = users.person.detail
+        }
     }
 }

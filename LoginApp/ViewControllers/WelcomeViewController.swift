@@ -14,8 +14,6 @@ class WelcomeViewController: UIViewController {
     var name: String!
     var lastname: String!
     
-    let users = User.getUsers()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

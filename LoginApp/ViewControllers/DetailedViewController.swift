@@ -9,6 +9,13 @@ import UIKit
 
 class DetailedViewController: UIViewController {
     
+    @IBOutlet weak var detailLabel: UILabel!
     
+    var detail: String!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        detailLabel.text = detail
+    }
 }

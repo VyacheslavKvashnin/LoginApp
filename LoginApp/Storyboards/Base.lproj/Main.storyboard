@@ -175,7 +175,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="more"/>
                                 <connections>
-                                    <segue destination="Fll-Mg-sB1" kind="show" id="pV3-Ve-JOs"/>
+                                    <segue destination="Fll-Mg-sB1" kind="show" identifier="ooo" id="pV3-Ve-JOs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -207,14 +207,30 @@
                     <view key="view" contentMode="scaleToFill" id="dBJ-Pv-Rho">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB5-bj-j27">
+                                <rect key="frame" x="16" y="438" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="80i-4d-8PR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KB5-bj-j27" firstAttribute="leading" secondItem="80i-4d-8PR" secondAttribute="leading" constant="16" id="atG-fg-Oc9"/>
+                            <constraint firstItem="KB5-bj-j27" firstAttribute="centerY" secondItem="dBJ-Pv-Rho" secondAttribute="centerY" id="mfL-TP-aGg"/>
+                            <constraint firstItem="80i-4d-8PR" firstAttribute="trailing" secondItem="KB5-bj-j27" secondAttribute="trailing" constant="16" id="mzf-ad-2JL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T10-eS-Tl1"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="KB5-bj-j27" id="BUs-4a-4L6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBd-pS-522" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3907" y="15"/>
+            <point key="canvasLocation" x="3071" y="783"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="b34-3f-Pue">
@@ -222,6 +238,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="fbT-CQ-dTL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ury-mu-VSz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
