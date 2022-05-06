@@ -14,6 +14,8 @@
 Для этого необходимо переопределить метод touchesBegan:
 
 // Метод для скрытия клавиатуры тапом по экрану
-```override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+```
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super .touchesBegan(touches, with: event)
-}```
+}
+```
