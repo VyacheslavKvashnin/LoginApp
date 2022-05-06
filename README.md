@@ -21,4 +21,9 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 }
 ```
 
-<img src = "https://user-images.githubusercontent.com/101284761/167179657-6da1e0a9-a056-41d2-a8e5-a2cf33e6871e.png" width = "150">   <img src = "https://user-images.githubusercontent.com/101284761/167179672-9e19be30-542e-49ca-815a-8586581e0198.png" width = "150"> <img src = "https://user-images.githubusercontent.com/101284761/167179676-29f33f95-cf99-44d7-b61c-7afc614a6898.png" width = "150">   <img src = "https://user-images.githubusercontent.com/101284761/167179683-605b2bc9-21fd-4308-9d3e-eb19eea64eca.png" width = "150"> <img src = "https://user-images.githubusercontent.com/101284761/167179688-238e676d-8993-4aaf-bdb6-013d2d8dcca6.png" width = "150">   <img src = "https://user-images.githubusercontent.com/101284761/167179690-297664b2-bbf0-4ac9-b9b8-1be674e7bc27.png" width = "150">
+<img src = "https://user-images.githubusercontent.com/101284761/167179690-297664b2-bbf0-4ac9-b9b8-1be674e7bc27.png" width = "150">
+<img src = "https://user-images.githubusercontent.com/101284761/167179672-9e19be30-542e-49ca-815a-8586581e0198.png" width = "150"> 
+<img src = "https://user-images.githubusercontent.com/101284761/167179676-29f33f95-cf99-44d7-b61c-7afc614a6898.png" width = "150">  
+<img src = "https://user-images.githubusercontent.com/101284761/167179683-605b2bc9-21fd-4308-9d3e-eb19eea64eca.png" width = "150">
+<img src = "https://user-images.githubusercontent.com/101284761/167179688-238e676d-8993-4aaf-bdb6-013d2d8dcca6.png" width = "150"> 
+<img src = "https://user-images.githubusercontent.com/101284761/167179657-6da1e0a9-a056-41d2-a8e5-a2cf33e6871e.png" width = "150">  
