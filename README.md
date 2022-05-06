@@ -21,7 +21,7 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 }
 ```
 
-<img src = "https://user-images.githubusercontent.com/101284761/167179690-297664b2-bbf0-4ac9-b9b8-1be674e7bc27.png" width = "150">
+<img src = "https://user-images.githubusercontent.com/101284761/167179690-297664b2-bbf0-4ac9-b9b8-1be674e7bc27.png" width = "200">
 <img src = "https://user-images.githubusercontent.com/101284761/167179672-9e19be30-542e-49ca-815a-8586581e0198.png" width = "150"> 
 <img src = "https://user-images.githubusercontent.com/101284761/167179676-29f33f95-cf99-44d7-b61c-7afc614a6898.png" width = "150">  
 <img src = "https://user-images.githubusercontent.com/101284761/167179683-605b2bc9-21fd-4308-9d3e-eb19eea64eca.png" width = "150">
